@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="button.js"></script>
+    <link href="https://use.fontawesome.com/releases/v5.0.11/css/all.css" rel="stylesheet">
+</head>
+<body>
+
+<div class="nav-side-menu">
+    <i class="fa fa-bars fa-2x toggle-btn" data-toggle="collapse" data-target="#menu-content"></i>
+    <div class="menu-list">
+        <a class="navbar-brand" href="#"><img src="img/logo.png" class="rounded mt-3 d-block"></a>
+        <ul id="menu-content" class="menu-content collapse out">
+            <li>
+                <a href="homeAdmin.html">
+                    <i class="fas fa-tachometer-alt fa-lg">Domov</i>
+                </a>
+            </li>
+
+            <li>
+                <a href="#">
+                    <i class="fas fa fa-credit-card fa-lg"></i> Platby
+                </a>
+            </li>
+
+            <li>
+                <a href="#">
+                    <i class="fas fa-lg"></i> Dáta
+                </a>
+            </li>
+
+            <li data-toggle="collapse" data-target="#service" class="active">
+                <a href="#"><i class="fab 	fa fa-envelope fa-lg"></i> Správy <span class="arrow"></span></a>
+            </li>
+            <ul class="sub-menu" id="service">
+                <li class="active"><a href="AdmMsgs.html"><i>Správy</i></a></li> <!-- tu ide o to aby sa dalo hromadne odpovedať Naša hlavná funkcionalita
+                                               musí byť ako prevá funkčná> -->
+                <li>Prijaté správy</li> <!-- Je toto nutné? -->
+                <li><a href="AdmNewMsg.html"><i>Nová Správa</i></a></li>
+            </ul>
+
+            <li data-toggle="collapse" data-target="#new" class="collapsed">
+                <a href="#"><i class="fas fa-user-tie fa-lg"></i> Profil <span class="arrow"></span></a>
+            </li>
+            <ul class="sub-menu collapse" id="new">
+                <li>Nastavenia</li>
+                <li>Odhlásiť sa</li>
+            </ul>
+        </ul>
+    </div>
+</div>
+<div class="col-md-8 mx-auto">
+    <br>
+    <h1>Filter Správ</h1>
+    <br>
+    <button class="btn btn-dark" onclick="window.location.href='AdmMsgsHW.html'">Problémy s HW</button>
+    <button class="btn btn-warning" onclick="window.location.href='AdmMsgsDATA.html'">Problémy s Dátami</button>
+    <button class="btn btn-dark" onclick="window.location.href='AdmMsgs.html'">Problémy s internetom</button>
+    <br>
+    <br>
+    <table class="table bg-white">
+        <thead>
+        <tr>
+            <th scope="col">Filter</th>
+            <th scope="col">Odosielateľ</th>
+            <th scope="col">Predmet</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <th scope="row"><input type="checkbox" name="Filter" value="Something" checked></th>
+            <td>Lucia Nová</td>
+            <td>Minuly sa mi dáta čo mám robiť?</td>
+        </tr>
+        <tr>
+            <th scope="row"><input type="checkbox" name="Filter" value="Something" checked></th>
+            <td>Jack Kováč</td>
+            <td>Mám veľmi pomalý internet.Minul som Dáta? </td>
+        </tr>
+        <tr>
+            <th scope="row"><input type="checkbox" name="Filter" value="Something" checked></th>
+            <td>Jozef Filip</td>
+            <td>Nedostatok Dát</td>
+        </tr>
+        </tbody>
+    </table>
+    <br>
+    <button class="btn btn-success rounded-pill" onclick="window.location.href='AdmReply.html'">Odpovedať</button>
+</div>
+<!--/container-->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="../static/js/bootstrap.js" th:href="@{/js/bootstrap.js}"></script>
+<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+</body>
+</html>
