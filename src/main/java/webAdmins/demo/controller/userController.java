@@ -25,9 +25,11 @@ public class userController {
 
     @RequestMapping(value = "/User/{login}",method = RequestMethod.POST)
     public String GetUserInfo(@PathVariable(value = "login") String login,
-                           @Valid @RequestBody String password)
+                           @Valid @RequestBody String password,Model model)
+
     {
         user User = userService.FindByLogin(login);
+        model.addAttribute("User", User);
         if(User.getPassword().equals(password)){
            if(User.isIsadmin()) {
                return "homeAdmin";
