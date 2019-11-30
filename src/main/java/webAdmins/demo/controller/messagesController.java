@@ -3,6 +3,7 @@ package webAdmins.demo.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import webAdmins.demo.entity.messages;
 import webAdmins.demo.entity.user;
@@ -16,9 +17,12 @@ public class messagesController {
     @Autowired
     messagesService service;
 
-    @RequestMapping(value = "/Messages")
-    public List<messages> sample() {
-        return service.getAllMessages();
+    @RequestMapping(value = "/{id}/Messages")
+    public String sample(@PathVariable(value = "id") int Id, Model model) {
+        //return
+        model.addAttribute("mojeSpravy", service.getAllMessages(Id));
+        model.addAttribute("dorucene", service.getDostane(Id));
+        return "AdmMsgs";
     }
     @RequestMapping(value = "/createMessage", method = RequestMethod.POST)
     public messages createUser(@Valid @RequestBody messages messages) {
