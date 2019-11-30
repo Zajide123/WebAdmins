@@ -24,13 +24,17 @@ public class userController {
     }
 
     @RequestMapping(value = "/User/{login}",method = RequestMethod.POST)
-    public user GetUserInfo(@PathVariable(value = "login") String login,
+    public String GetUserInfo(@PathVariable(value = "login") String login,
                            @Valid @RequestBody String password)
     {
         user User = userService.FindByLogin(login);
         if(User.getPassword().equals(password)){
-            return User;
-
+           if(User.isIsadmin()) {
+               return "homeAdmin";
+           }
+           else {
+               return "home";
+           }
         }
         else {
             return null;

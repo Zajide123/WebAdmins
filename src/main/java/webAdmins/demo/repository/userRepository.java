@@ -12,4 +12,7 @@ import java.util.List;
 public interface userRepository extends JpaRepository<user,Integer> {
     @Query(value = "SELECT user FROM user u where u.Login = :Login", nativeQuery = true)
   user FindByLogin(@Param("Login") String Login);
+
+    @Query(value = "SELECT user FROM user u where u.UserID = :ID", nativeQuery = true)
+    user FindByID(@Param("ID") int Id);
 }
