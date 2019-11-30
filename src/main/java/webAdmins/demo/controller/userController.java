@@ -2,17 +2,27 @@ package webAdmins.demo.controller;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.env.Environment;
 import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import webAdmins.demo.entity.user;
 import webAdmins.demo.service.userService;
 
 import javax.validation.Valid;
+import java.util.Date;
 import java.util.List;
-@RestController
+@Controller
 public class userController {
+    private String appMode;
     @Autowired
     userService userService;
+    @Autowired
+    public void WebAppContoller(Environment environment){
+        appMode = environment.getProperty("app-mode");
+    }
+
     @RequestMapping(value = "/User/{login}",method = RequestMethod.POST)
     public user GetUserInfo(@PathVariable(value = "login") String login,
                            @Valid @RequestBody String password)
@@ -57,6 +67,11 @@ public class userController {
         }
 
         return "login";
+    }
+    @RequestMapping("/")
+    public String index(Model model){
+
+        return "index";
     }
 
 }
