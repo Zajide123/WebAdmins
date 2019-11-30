@@ -67,6 +67,7 @@
     <br>
     <div class="form-group">
         <h4 class="ml-5">Komu:</h4><input type="text" class="form-control-plaintext bg-white ml-5" placeholder="tu budu maily vštkých tých ludi ktoých správu su zaškrtnuté" name="text2">
+        <p th:text="${#request.getParameter('q')}" th:unless="${#request.getParameter('q') == null}">Test</p>
         <br>
         <h4 class="ml-5">Predmet:</h4><input type="text" class="form-control-plaintext bg-white ml-5" placeholder="Sem sa môžu aj tagy vypísať filtrovaných správ" name="text2">
         <br>
@@ -74,6 +75,7 @@
         <br>
         <button class="btn btn-success rounded-pill ml-5" type="submit">Odoslať</button>
     </div>
+</div>
     <!--/container-->
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
