@@ -32,10 +32,10 @@
                               <h3 class="col">Login</h3>
                           <!--</div>-->
                            <!--<div class="card-body">-->
-                              <form class="form" action="#" th:action="@{/User/" th:object="${user}" role="form" autocomplete="off" id="formLogin" novalidate="" method="POST">
+                              <form class="form" action="#" th:action="@{/User/{login}" th:object="${user}" role="form" autocomplete="off" id="formLogin" novalidate="" method="POST">
                                   <div class="form-group">
                                       <label for="uname1">Používateľské meno:</label>
-                                      <input type="text" th:field="*{Login} class="form-control form-control-lg rounded-pill" name="uname1" id="uname1" required=""/>
+                                      <input type="text" class="form-control form-control-lg rounded-pill" name="uname1" id="uname1" required=""/>
                                       <div class="invalid-feedback">Oops, you missed this one.</div>
                                   </div>
                                   <div class="form-group">
@@ -50,7 +50,7 @@
                                         <span class="custom-control-description small text-dark">Remember me on this computer</span>
                                       </label>
                                   </div>
-                                  <a href="/User/"><img src="../../../../../../WebAdmins2/WebAdmins/img/Prihlasit_sa.png" class="btn btn-lg float-right" id="btnLogin"></a>
+                                  <a href="#"><img src="../../../../../../WebAdmins2/WebAdmins/img/Prihlasit_sa.png" class="btn btn-lg float-right" id="btnLogin"></a>
                                   <!--<button type="submit" class="btn btn-success btn-lg float-right" id="btnLogin">Prihlásiť sa</button>-->
                               </form>
                         <!--  </div> -->
@@ -72,5 +72,68 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="../static/js/bootstrap.js" th:href="@{/js/bootstrap.js}"></script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <!-- Footer -->
+    <footer>
+        <!-- Grid row-->
+        <div class="row text-center d-flex justify-content-center pt-5 mb-3">
+
+            <!-- Grid column -->
+            <div class="col-md-2 mb-3 ">
+                <h6 class="text-uppercase font-weight-bold btn btn-warning rounded-pill">
+                    <a href="#!">O nás</a>
+                </h6>
+            </div>
+            <!-- Grid column -->
+
+            <!-- Grid column -->
+            <div class="col-md-2 mb-3">
+                <h6 class="text-uppercase font-weight-bold btn btn-warning rounded-pill">
+                    <a href="#!">Produkty</a>
+                </h6>
+            </div>
+            <!-- Grid column -->
+
+            <!-- Grid column -->
+            <div class="col-md-2 mb-3">
+                <h6 class="text-uppercase font-weight-bold btn btn-warning rounded-pill">
+                    <a href="#!">Užitočné linky</a>
+                </h6>
+            </div>
+            <!-- Grid column -->
+
+            <!-- Grid column -->
+            <div class="col-md-2 mb-3">
+                <h6 class="text-uppercase font-weight-bold btn btn-warning rounded-pill">
+                    <a href="#!">Kontakt</a>
+                </h6>
+            </div>
+            <!-- Grid column -->
+
+        </div>
+        <!-- Grid row-->
+        <hr style="margin: 0 15%; width:70%; border:none; height:3px; background-color:orange;">
+
+        <!-- Grid row-->
+        <div class="row d-flex text-center justify-content-center mb-md-0 mb-4">
+
+            <!-- Grid column -->
+            <div class="col-md-8 col-12 mt-5">
+                <p style="line-height: 1.7rem">Sed ut perspiciatis unde omnis iste natus error sit voluptatem
+                    accusantium doloremque laudantium, totam rem
+                    aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt
+                    explicabo.
+                    Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur.</p>
+            </div>
+            <!-- Grid column -->
+
+        </div>
+        <!-- Grid row-->
+
+        <!-- Copyright -->
+        <div class="footer-copyright text-center py-3">© WebAdmins 2019</div>
+        <!-- Copyright -->
+
+    </footer>
+    <!-- Footer -->
   </body>
 </html>
